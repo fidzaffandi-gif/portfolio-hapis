@@ -1,5 +1,7 @@
 "use client";
-
+import Image from "next/image";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { Spotlight } from "@/components/ui/spotlight";
 import { PinContainer } from "@/components/ui/3d-pin";
 import { FlipWords } from "@/components/ui/flip-words";
 import { TracingBeam } from "@/components/ui/tracing-beam";
@@ -78,15 +80,26 @@ export default function Home() {
   return (
     
     <main className="flex min-h-screen flex-col items-center bg-black px-4">
-      <div className="flex min-h-screen flex-col items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-3xl font-bold text-white md:text-5xl">
-            Halo, saya Hapis
-          </h1>
-          <div className="text-3xl font-bold text-white md:text-5xl">
-            Seorang <FlipWords words={words} className="text-cyan-400" />
-          </div>
-        </div>
+      <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden">
+  <Spotlight
+    className="-top-40 left-0 md:left-60 md:-top-20"
+    fill="white"
+  />
+       <div className="flex flex-col items-center text-center">
+  <Image
+    src="/default.jpg"
+    alt="Foto Hapis"
+    width={160}
+    height={160}
+    className="mb-6 h-40 w-40 rounded-full border-2 border-cyan-400/50 object-cover"
+  />
+  <h1 className="text-3xl font-bold text-white md:text-5xl">
+    Halo, saya Hapis
+  </h1>
+  <div className="text-3xl font-bold text-white md:text-5xl">
+    Seorang <FlipWords words={words} className="text-cyan-400" />
+  </div>
+</div>
       </div>
 
       <div className="w-full max-w-6xl py-20">
@@ -100,31 +113,30 @@ export default function Home() {
               title="github.com"
               href={project.href}
             >
-              <div className="flex h-[16rem] w-[16rem] flex-col justify-between p-4 text-white">
-                <h3 className="text-lg font-bold">{project.title}</h3>
-                <p className="text-sm text-slate-400">{project.desc}</p>
-              </div>
+                            <div className="flex h-[16rem] w-[16rem] flex-col justify-between p-4 text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(34,211,238,0.6)]">
+  <h3 className="text-lg font-bold">{project.title}</h3>
+  <p className="text-sm text-slate-400">{project.desc}</p>
+</div>
             </PinContainer>
           ))}
         </div>
       </div>
 
       <TracingBeam className="max-w-2xl py-10">
-        <div className="text-white">
-          <h2 className="mb-4 text-2xl font-bold">Tentang Saya</h2>
-          <p className="mb-6 text-slate-300">
-            Saya mahasiswa D3 Teknik Komputer yang suka belajar lewat
-            praktik langsung — dari bikin sistem web pake PHP, sampai
-            proyek IoT pake ESP32. Saya senang eksplorasi hal baru dan
-            nyelesein masalah nyata lewat kode.
-          </p>
-          <p className="text-slate-300">
-            Beberapa area yang saya dalami: pengembangan web (CodeIgniter,
-            PHP/PDO), sistem IoT (ESP32, sensor, dashboard monitoring),
-            dan dasar-dasar keamanan jaringan dari kuliah.
-          </p>
-        </div>
-      </TracingBeam>
+  <div className="text-white">
+    <h2 className="mb-4 text-2xl font-bold">Tentang Saya</h2>
+    <TextGenerateEffect
+      words="Saya mahasiswa D3 Teknik Komputer yang suka belajar lewat praktik langsung — dari bikin sistem web pake PHP, sampai proyek IoT pake ESP32. Saya senang eksplorasi hal baru dan nyelesein masalah nyata lewat kode."
+      className="text-slate-300"
+    />
+    <div className="mt-6">
+      <TextGenerateEffect
+        words="Beberapa area yang saya dalami: pengembangan web (CodeIgniter, PHP/PDO), sistem IoT (ESP32, sensor, dashboard monitoring), dan dasar-dasar keamanan jaringan dari kuliah."
+        className="text-slate-300"
+      />
+    </div>
+  </div>
+</TracingBeam>
 
      <div className="relative flex w-full max-w-4xl flex-col items-start justify-start py-20 pb-[26rem] [perspective:1000px] md:pb-[30rem]">
         <h2 className="mb-8 text-2xl font-bold text-white">Skills</h2>
