@@ -94,11 +94,11 @@ export default function Home() {
     className="mb-6 h-40 w-40 rounded-full border-2 border-cyan-400/50 object-cover"
   />
   <h1 className="text-3xl font-bold text-white md:text-5xl">
-    Halo, saya Hapis
-  </h1>
-  <div className="text-3xl font-bold text-white md:text-5xl">
-    Seorang <FlipWords words={words} className="text-cyan-400" />
-  </div>
+  Hi I&apos;m Hapis
+</h1>
+<div className="text-3xl font-bold text-white md:text-5xl">
+  A <FlipWords words={words} className="text-cyan-400" />
+</div>
 </div>
       </div>
 
