@@ -7,6 +7,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { Tabs } from "@/components/ui/tabs";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   const words = ["Web Developer", "IoT Enthusiast", "Network Engineer"];
@@ -172,7 +173,8 @@ export default function Home() {
       </div>
       
       </div>
-       </main>
+          </main>
+    <Footer />
   </>
   );
 }
