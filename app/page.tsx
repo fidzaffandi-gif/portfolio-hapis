@@ -156,12 +156,18 @@ export default function Home() {
         Terbuka buat kolaborasi, magang, atau sekadar ngobrol soal tech.
       </p>
       <div className="flex flex-wrap justify-center gap-4">
-        
-        <a href="mailto:fidzaffandi@gmail.com"
-          className="rounded-full border border-white/20 px-6 py-2 text-white transition hover:border-cyan-400 hover:text-cyan-400"
-        >
-          Email
-        </a>
+  <a
+    href="/CV_Mohammad_Hafizd_Affandi.pdf"
+    download
+    className="rounded-full bg-cyan-400 px-6 py-2 font-semibold text-black transition hover:bg-cyan-300"
+  >
+    Download CV
+  </a>
+  <a href="mailto:fidzaffandi@gmail.com"
+    className="rounded-full border border-white/20 px-6 py-2 text-white transition hover:border-cyan-400 hover:text-cyan-400"
+  >
+    Email
+  </a>
                 
          
         <a href="https://github.com/fidzaffandi-gif"
