@@ -6,6 +6,7 @@ import { PinContainer } from "@/components/ui/3d-pin";
 import { FlipWords } from "@/components/ui/flip-words";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { Tabs } from "@/components/ui/tabs";
+import { Navbar } from "@/components/Navbar";
 
 export default function Home() {
   const words = ["Web Developer", "IoT Enthusiast", "Network Engineer"];
@@ -78,9 +79,10 @@ export default function Home() {
   ];
 
   return (
-    
+  <>
+    <Navbar />
     <main className="flex min-h-screen flex-col items-center bg-black px-4">
-      <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden">
+      <div id="home" className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden">
   <Spotlight
     className="-top-40 left-0 md:left-60 md:-top-20"
     fill="white"
@@ -102,7 +104,7 @@ export default function Home() {
 </div>
       </div>
 
-      <div className="w-full max-w-6xl py-20">
+      <div id="projects" className="w-full max-w-6xl py-20">
         <h2 className="mb-12 text-center text-2xl font-bold text-white">
           Projects
         </h2>
@@ -121,8 +123,9 @@ export default function Home() {
           ))}
         </div>
       </div>
-
-      <TracingBeam className="max-w-2xl py-10">
+<div id="about">
+  </div><TracingBeam className="max-w-2xl py-10">
+      
   <div className="text-white">
     <h2 className="mb-4 text-2xl font-bold">Tentang Saya</h2>
     <TextGenerateEffect
@@ -138,7 +141,7 @@ export default function Home() {
   </div>
 </TracingBeam>
 
-     <div className="relative flex w-full max-w-4xl flex-col items-start justify-start py-20 pb-[26rem] [perspective:1000px] md:pb-[30rem]">
+     <div id="skills" className="relative flex w-full max-w-4xl flex-col items-start justify-start py-20 pb-[26rem] [perspective:1000px] md:pb-[30rem]">
         <h2 className="mb-8 text-2xl font-bold text-white">Skills</h2>
         <Tabs
           tabs={skillTabs}
@@ -146,7 +149,7 @@ export default function Home() {
           contentClassName="h-[20rem] md:h-[24rem]"
         />
       </div>
-
+            <div id="contact" className="flex w-full max-w-2xl flex-col items-center gap-6 py-20 text-center">
             <h2 className="text-2xl font-bold text-white">Contact</h2>
                   <p className="text-slate-300">
         Terbuka buat kolaborasi, magang, atau sekadar ngobrol soal tech.
@@ -168,7 +171,8 @@ export default function Home() {
         </a>
       </div>
       
-      
-    </main>
+      </div>
+       </main>
+  </>
   );
 }
